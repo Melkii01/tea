@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --output-path docs --base-href /tea/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start1": "http-server -c-1 -p 8081 dist/tea"
