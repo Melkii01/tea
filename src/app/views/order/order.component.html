@@ -1,0 +1,129 @@
+<!-- Форма заказа -->
+<section>
+  <div class="container p-5 my-order" *ngIf="!formHide">
+    <h2 class="fw-bold text-center mb-4">Сделать заказ</h2>
+    <form class="row g-3 mx-auto my-form needs-validation" [formGroup]="formValues">
+
+      <div class="col-md-4">
+        <label for="name" class="form-label">Имя</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+
+        <div class="w-100" *ngIf="formValues.get('name')?.invalid
+                    && (formValues.get('name')?.touched || formValues.get('name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('name')?.errors?.['required']">
+            Заполните поле
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('name')?.errors?.['pattern']">
+            Только русские буквы
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="last_name" class="form-label">Фамилия</label>
+        <input type="text" class="form-control" id="last_name" formControlName="last_name">
+
+        <div class="w-100" *ngIf="formValues.get('last_name')?.invalid
+                    && (formValues.get('last_name')?.touched || formValues.get('last_name')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('last_name')?.errors?.['required']">
+            Заполните поле
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('last_name')?.errors?.['pattern']">
+            Только русские буквы
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="phone" class="form-label">Телефон</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+
+        <div class="w-100" *ngIf="formValues.get('phone')?.invalid
+                    && (formValues.get('phone')?.touched || formValues.get('phone')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('phone')?.errors?.['required']">
+            Заполните поле
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('phone')?.errors?.['pattern']">
+            Введите корректный номер
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="country" class="form-label">Страна</label>
+        <input type="text" class="form-control" id="country" formControlName="country">
+
+        <div class="w-100" *ngIf="formValues.get('country')?.invalid
+                    && (formValues.get('country')?.touched || formValues.get('country')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('country')?.errors?.['required']">
+            Заполните поле
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="zip" class="form-label">Индекс</label>
+        <input type="text" class="form-control" id="zip" maxlength="6" formControlName="zip">
+
+        <div class="w-100" *ngIf="formValues.get('zip')?.invalid
+                    && (formValues.get('zip')?.touched || formValues.get('zip')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('zip')?.errors?.['required']">
+            Заполните поле
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="address" class="form-label">Адрес</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+
+        <div class="w-100" *ngIf="formValues.get('address')?.invalid
+                    && (formValues.get('address')?.touched || formValues.get('address')?.dirty)">
+          <div class="invalid-feedback" *ngIf="formValues.get('address')?.errors?.['required']">
+            Заполните поле
+          </div>
+          <div class="invalid-feedback" *ngIf="formValues.get('address')?.errors?.['pattern']">
+            В поле «Адрес» можно вводить: русские буквы, цифры, пробелы, дефис и слеш
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="product" class="form-label">Товар</label>
+        <input type="text" class="form-control" id="product" formControlName="product"
+               [attr.disabled]="'disabled'">
+
+        <div class="w-100" *ngIf="formValues.get('product')?.invalid">
+          <div class="invalid-feedback" *ngIf="formValues.get('product')?.errors?.['required']">
+            Поле заполняется автоматически, если не заполнено, выберите товар в каталоге
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="comment" class="form-label">Комментарий к заказу</label>
+        <textarea class="form-control" id="comment" formControlName="comment"></textarea>
+      </div>
+
+      <div class="col-12">
+        <button type="button" class="btn btn-primary"
+                [class]="btnDisabled?'disabled':''" (click)="createOrder()">
+          Отправить
+        </button>
+        <div class="invalid-feedback" *ngIf="errorResponse">
+          Произошла ошибка. Попробуйте еще раз.
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="row g-3 text-center justify-content-center mx-auto h-100 pt-5 pb-5"
+       *ngIf="formHide"
+       id="my-success">
+    <div class="col-sm-8">
+      <h4>Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</h4>
+    </div>
+  </div>
+</section>

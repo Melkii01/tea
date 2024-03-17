@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/*Шапка сайта*/
+/*Цвет header*/
+.bg-body-tertiary, footer {
+  background-color: #F8F9FA;
+}
+
+/*Логотип выравнен*/
+.navbar-brand {
+  padding-top: 0;
+}
+
+/*Кнопку перекрасил*/
+.btn-outline-success {
+  border-radius: 4px;
+  color: #007BFF;
+  --bs-btn-color: #007BFF;
+  --bs-btn-border-color: #007BFF;
+  --bs-btn-hover-bg: #007BFF;
+  --bs-btn-hover-border-color: #007BFF;
+  --bs-btn-active-bg: #007BFF;
+  --bs-btn-active-border-color: #007BFF;
+  --bs-btn-disabled-color: #007BFF;
+  --bs-btn-disabled-border-color: #007BFF;
+}
+
+.btn-search {
+  width: 135px;
+}
+
+/*Карусель фоток*/
+.slick-prev {
+  left: 31px;
+  z-index: 10;
+}
+
+.slick-prev:before {
+  content: url("assets/images/arrow-left.png");
+}
+
+.slick-next {
+  right: 50px;
+  z-index: 10;
+}
+
+.slick-next:before {
+  content: url("assets/images/arrow-right.png");
+}
+
+/*Чайная коллекция*/
+.my-border {
+  border: 1px solid #E3E3E3;
+  border-radius: 4px;
+}
+
+/* Частые ответы */
+.accordion-button {
+  background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("assets/images/arrow.png");
+}
+
+.accordion-button::after {
+  background-image: url("assets/images/arrow.png");
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: var(--bs-accordion-btn-focus-border-color);
+  outline: 0;
+  box-shadow: none;
+}
+
+.my-accordion {
+  max-width: 856px;
+}
+
+/*Форма заказа*/
+
+.my-form {
+  max-width: 636px;
+}
+
+.my-order {
+  max-width: 636px;
+}
+
+
+/*Увеличить картинки при нажатии*/
+
+/* Стили наведений */
+.hvr-bounce-to-right:before {
+  background: #ffffff;
+  border: 1px solid #0a53be;
+  border-radius: 5px;
+  color: #0a53be;
+}
+
+.hvr-bounce-to-right:active, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:hover {
+  color: #0a53be;
+}
+
+
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+.invalid-feedback {
+  display: block;
+}
+
+.card {
+  background-color: #f3f3f3;
+}
+
+.btn-card:hover {
+  color: #007BFF;
+}
+
+.popup-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-block {
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+}
+
+.popup-btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.loader-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.loader {
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #007BFF;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+  z-index: 100;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+
+
+
+
+
+
