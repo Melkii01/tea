@@ -1,0 +1,10 @@
+.my-popup {
+  position: relative;
+}
+
+.popup-btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+

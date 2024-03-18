@@ -57,10 +57,18 @@ body {
 }
 
 /* Частые ответы */
-.accordion-button {
-  background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+.my-accordion {
+  max-width: 856px;
 }
 
+.accordion-button {
+  background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+  color: white;
+}
+.accordion-button:not(.collapsed){
+  color: white;
+
+}
 .accordion-button:not(.collapsed)::after {
   background-image: url("assets/images/arrow.png");
 }
@@ -71,13 +79,9 @@ body {
 
 .accordion-button:focus {
   z-index: 3;
-  border-color: var(--bs-accordion-btn-focus-border-color);
+  /*border-color: var(--bs-accordion-btn-focus-border-color);*/
   outline: 0;
   box-shadow: none;
-}
-
-.my-accordion {
-  max-width: 856px;
 }
 
 /*Форма заказа*/
@@ -121,31 +125,6 @@ input.ng-invalid.ng-touched {
 
 .btn-card:hover {
   color: #007BFF;
-}
-
-.popup-bg {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.popup-block {
-  border: 1px solid #007BFF;
-  border-radius: 5px;
-  background-color: white;
-  position: relative;
-}
-
-.popup-btn-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
 .loader-bg {
